@@ -16,10 +16,11 @@ const Deposit = () => {
 
     const [coins, setCoins] = useState([
         { name: "Choose me", address: "" },
-        { name: "USDT Trc 20", address: "TS5D4hJCZkuXL8w45MMqBtHPxrc4gQ1crc" },
-        { name: "Bitcoin", address: "1DNmBYKPbhCUcbd5TqiRiMDNTzjDKC19Kv" },
-        { name: "Litecoin", address: "0x924c316d09408d60c44f020acb9e78256341245c" },
-        { name: "BNB Bep 20", address: "0x924c316d09408d60c44f020acb9e78256341245c" }
+        { name: "USDT TRC 20", address: "0xddcdfb070673bc4e5bb476B3038c87D0f179a390" },
+        { name: "Bitcoin", address: "bc1qqqyps6ta6qa8jk7mgplvukr5avrq7q9tppyn6g" },
+        { name: "Litecoin", address: "ltc1qvv045h8aav4mxpw4jcs8chvfe53zxg9lvrztf2" },
+        { name: "BNB BEP 20", address: "0xddcdfb070673bc4e5bb476B3038c87D0f179a390" },
+        { name: "Ethereum", address: "0xddcdfb070673bc4e5bb476B3038c87D0f179a390" }
     ])
 
     useEffect(() => {
