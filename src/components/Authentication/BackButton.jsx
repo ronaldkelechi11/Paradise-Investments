@@ -13,8 +13,8 @@ const BackButton = () => {
         <motion.div
             whileHover={{ scale: 1.4 }}
             onClick={goBack}
-            className='w-12 h-12 rounded-xl bg-primary fixed top-5 left-5 flex flex-col justify-center items-center cursor-pointer'>
-            <FaArrowLeft />
+            className='w-12 h-12 rounded-xl bg-primary fixed top-5 left-5 flex flex-col justify-center items-center cursor-pointer text-white'>
+            <FaArrowLeft color="currentColor" />
         </motion.div>
     )
 }

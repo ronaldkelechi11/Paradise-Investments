@@ -1,5 +1,4 @@
 import About from "../components/Landing/About"
-import CallToAction from "../components/Landing/CallToAction"
 import Contact from "../components/Landing/Contact"
 import Footer from "../components/Landing/Footer"
 import Hero from "../components/Landing/Hero"
@@ -14,7 +13,6 @@ const Landing = () => {
             <Plans />
             <About />
             <Team />
-            <CallToAction />
             <Contact />
             <Footer />
         </div>

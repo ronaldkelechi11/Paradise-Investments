@@ -15,7 +15,7 @@ const Hero = () => {
     return (
         <div className='w-screen h-screen bg-heroPattern bg-center bg-cover bg-no-repeat flex flex-col gap-2 md:gap-5'>
 
-            <div className="w-full h-full bg-[rgba(0,0,0,0.8)]">
+            <div className="w-full h-full bg-[rgba(0,0,0,0.5)]">
                 <Navbar />
                 <div className="flex flex-col w-full h-full gap-3 justify-center items-center p-2 md:p-5">
                     <motion.div

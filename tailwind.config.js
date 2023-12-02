@@ -13,7 +13,7 @@ export default {
         billabong: 'Billabong'
       },
       backgroundImage: {
-        heroPattern: "url('/src/assets/contact_bg.png')",
+        heroPattern: "url('/src/assets/hero-bg.jpg')",
         heroPattern2: "url('/src/assets/bg1.jpg')",
       }
     },

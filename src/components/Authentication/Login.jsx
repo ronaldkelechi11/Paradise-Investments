@@ -61,7 +61,7 @@ const Login = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             type="submit"
-                            className="h-[50px] w-full uppercase bg-primary rounded-xl p-2 font-poppins">
+                            className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2 font-poppins">
                             Login
                         </motion.button>
                     </form>
