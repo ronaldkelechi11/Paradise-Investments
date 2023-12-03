@@ -57,7 +57,7 @@ const Home = () => {
 
                 <div className="w-full flex flex-row gap-1 justify-evenly md:flex">
 
-                    <Link to="transactions" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 text-white hover:text-white text-lg font-poppins">Transactions</Link>
+                    <Link to="transactions" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 text-white hover:text-white text-lg font-poppins">Deposits</Link>
 
                 </div>
 

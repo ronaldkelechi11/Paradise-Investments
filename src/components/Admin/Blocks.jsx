@@ -40,7 +40,7 @@ const Blocks = () => {
             </div>
 
             <div className="bg-primary h-52 flex-1 rounded-xl shadow-xl flex flex-col justify-center items-center gap-3">
-                <div className="text-white font-poppins uppercase font-extrabold text-xl">Verified Transactions</div>
+                <div className="text-white font-poppins uppercase font-extrabold text-xl">Verified Deposits</div>
                 <div className="text-white font-poppins uppercase font-extrabold text-4xl">
                     <span>{totalVerified}</span>
                 </div>

@@ -24,7 +24,7 @@ const TransactionWrapper = () => {
 
             <div className="text-end p-4 text-white bg-primary font-poppins text-3xl flex flex-row justify-between items-center">
                 <FaArrowLeft size={24} color="white" onClick={() => { navigate(-1) }} />
-                Transactions
+                Deposits
             </div>
 
 

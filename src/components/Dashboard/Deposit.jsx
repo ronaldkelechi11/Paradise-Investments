@@ -87,7 +87,7 @@ const Deposit = () => {
                     <input className="self-center bg-primary font-poppins file:border-none file:bg-black file:text-white h-[50px] file:h-full rounded-lg file:cursor-pointer" type="file" accept="image/*" required onChange={(e) => { setFile(e.target.files[0]) }} />
 
 
-                    <button onClick={createNewDeposit} className="bg-primary font-poppins font-extrabold h-[50px] rounded-xl">Done</button>
+                    <button onClick={createNewDeposit} className="bg-primary text-white font-poppins font-extrabold h-[50px] rounded-xl">Done</button>
                 </div>
             </div>
 

@@ -30,11 +30,11 @@ const Login = () => {
                     navigate("/dashboard/" + result.data.username)
                 }
             }).catch((err) => {
-                if (err.response.status == 401) {
+                if (err.response?.status == 401) {
                     alert("Password is not correct. Please try again.")
                     return false;
                 }
-                if (err.response.status == 501) {
+                if (err.response?.status == 501) {
                     alert("Incorrect Login details")
                     return false;
                 }

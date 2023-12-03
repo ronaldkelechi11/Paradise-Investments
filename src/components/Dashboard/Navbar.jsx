@@ -35,7 +35,7 @@ const Navbar = () => {
 }
 
 function NavLinks() {
-    const navbarStyling = "hover:scale-[1.1] hover:text-blue-500 font-poppins text-[16px] cursor-pointer transition-all"
+    const navbarStyling = "hover:scale-[1.1] hover:text-orange-300 font-poppins text-[16px] cursor-pointer transition-all"
     return (
         <div className='text-2xl font- text-white flex flex-col justify-center md:flex-row gap-4 items-center'>
             <Link reloadDocument className={navbarStyling}>Home</Link>
