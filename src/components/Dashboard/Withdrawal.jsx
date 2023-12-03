@@ -41,7 +41,7 @@ const Withdrawal = () => {
 
             <div className={showing ? "flex items-center w-screen p-2 rounded-xl" : 'hidden'}>
                 <div className="bg-white w-full p-2 roundex-xl flex flex-col gap-3">
-                    <img src="/assets/white_logo.JPG" className="w-32 h-32 self-center" />
+                    <p className="text-primary text-[7rem] text-center font-billabong">Pi</p>
                     <div className="self-start text-xl font-poppins">
                         Hello <strong className='font-extrabold'>{username},</strong> <br />
                         You have requested to withdraw the sum of ${WithdrawalAmount}.<br />
