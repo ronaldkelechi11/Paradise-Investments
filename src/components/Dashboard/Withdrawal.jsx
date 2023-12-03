@@ -80,7 +80,7 @@ const Withdrawal = () => {
 
 
             <div className='w-screen bg-primary fixed bottom-0 flex justify-center items-center p-3 md:p-5'>
-                <div className="font-extrabold uppercase text-center">Copyright © Paradise Investment, 2019.</div>
+                <div className="font-extrabold uppercase text-white text-center">Copyright © Paradise Investment, 2019.</div>
             </div>
         </div >
     )
