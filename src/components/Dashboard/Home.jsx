@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Plans from "../Landing/Plans";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 
 const Home = () => {
     var { username } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -28,6 +29,7 @@ const Home = () => {
             setUser(result.data)
         }).catch((err) => {
             console.log(err);
+            navigate('/signup')
         });
 
     return (

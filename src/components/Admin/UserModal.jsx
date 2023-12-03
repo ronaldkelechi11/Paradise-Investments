@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HiTrash } from 'react-icons/hi'
 
 const UserModal = ({ user }) => {
     const navigate = useNavigate()
@@ -15,6 +16,16 @@ const UserModal = ({ user }) => {
             { balance: balance, profit: profit })
             .then((result) => {
                 alert(`Succesfully Update user ${user.username}`)
+                navigate(0)
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
+
+    function deleteUser() {
+        axios.post(import.meta.env.VITE_BACKEND_URL + 'admin/edit/delete/' + user._id)
+            .then((result) => {
+                alert(`Succesfully Deleted user ${user.username}`)
                 navigate(0)
             }).catch((err) => {
                 console.log(err);
@@ -40,6 +51,8 @@ const UserModal = ({ user }) => {
             </div>
 
             <button className={updateButton ? 'bg-blue-500 h-12 rounded-xl' : 'bg-primary h-12 rounded-xl'} onClick={updateUserInfo}>Update</button>
+
+            <button className='bg-red-500 flex justify-center items-center text-2xl text-white  h-12 rounded-xl' onClick={deleteUser}><HiTrash /></button>
         </div>
     )
 }
