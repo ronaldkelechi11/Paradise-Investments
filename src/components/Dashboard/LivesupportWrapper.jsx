@@ -12,7 +12,7 @@ const LivesupportWrapper = ({ messages }) => {
 
 
     return (
-        <div className='flex h-full mt-16 flex-col bg-slate-50 gap-3 w-full p-2'>
+        <div className='flex mt-16 flex-col bg-slate-50 gap-3 w-full p-2'>
             {messages?.map(message => {
                 if (message.sender == username) {
                     return (<SentMessage message={message} key={message._id} />)
