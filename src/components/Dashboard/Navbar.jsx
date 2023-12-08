@@ -39,12 +39,12 @@ function NavLinks() {
     return (
         <div className='text-2xl font- text-white flex flex-col justify-center md:flex-row gap-4 items-center'>
             <Link reloadDocument className={navbarStyling}>Home</Link>
-            <a className={navbarStyling} href="#plans">Plans</a>
-            <a className={navbarStyling} onClick={() => { alert("You cannot modify your details till after 48 hours") }}>Profile</a>
+            <Link to={'transactions'} className={navbarStyling} >Deposits</Link>
+            <Link to={'withdrawals'} className={navbarStyling} >Withdrawals</Link>
             <Link className={navbarStyling} to="withdrawal">Withdraw</Link>
             <Link className={navbarStyling} to="deposit">Deposit</Link>
             <a className={navbarStyling} href="/login" onClick={() => { alert("Your are about to be logged out of your account") }}>Log Out</a>
-        </div>
+        </div >
     )
 }
 

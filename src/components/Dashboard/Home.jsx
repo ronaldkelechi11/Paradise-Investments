@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 const Home = () => {
     var { username } = useParams()
     const navigate = useNavigate()
+    const [unreadMessages, setUnreadMessages] = useState(0)
 
     useEffect(() => {
 
@@ -21,12 +22,14 @@ const Home = () => {
         balance: 0,
         profit: 0,
         refferalCode: "",
-        refferals: [{}]
+        refferals: [{}],
+        messages: [{}]
     })
 
     axios.get(import.meta.env.VITE_BACKEND_URL + "dashboard/" + username)
         .then((result) => {
             setUser(result.data)
+            setUnreadMessages(parseInt(user.messages.length - localStorage.getItem('messageListLength')))
         }).catch((err) => {
             console.log(err);
             navigate('/signup')
@@ -57,7 +60,8 @@ const Home = () => {
 
                 <div className="w-full flex flex-row gap-1 justify-evenly md:flex">
 
-                    <Link to="transactions" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 text-white hover:text-white text-lg font-poppins">Deposits</Link>
+
+                    <Link to="livesupport" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 text-white hover:text-white text-lg font-poppins">Live Support <span>( {unreadMessages} )</span></Link>
 
                 </div>
 

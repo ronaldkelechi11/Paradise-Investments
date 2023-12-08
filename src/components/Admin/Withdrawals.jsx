@@ -39,9 +39,13 @@ const Withdrawals = () => {
 
 export default Withdrawals
 
+
+
+
+
+
 function Withdrawal({ withdrawal }) {
     const navigate = useNavigate()
-
 
     function verifyWithdrawal() {
         axios.put(import.meta.env.VITE_BACKEND_URL + 'admin/withdrawal/verified/' + withdrawal?._id)
