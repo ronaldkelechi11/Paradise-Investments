@@ -4,24 +4,26 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Landing from './screens/Landing'
 
+// Authentication
 import Signup from './components/Authentication/Signup'
 import Login from './components/Authentication/Login'
 
-import Home from './components/Dashboard/Home'
-import Deposit from './components/Dashboard/Deposit'
-import Transactions from './components/Dashboard/Transactions'
-import Withdrawal from './components/Dashboard/Withdrawal'
-import WithdrawalsDashboard from './components/Dashboard/Withdrawals'
-
-import Livesupport from './components/Dashboard/Livesupport'
+// User Dashboard
+import Home from './components/UserDashboard/Home'
+import Deposit from './components/UserDashboard/Deposit'
+import Transactions from './components/UserDashboard/Transactions'
+import Withdrawal from './components/UserDashboard/Withdrawal'
+import WithdrawalsDashboard from './components/UserDashboard/Withdrawals'
+import Livesupport from './components/UserDashboard/Livesupport'
 
 import Notfound from './screens/Notfound'
 
+// Admin Dashboards
 import Admin from './screens/Admin'
-import TransactionWrapper from './components/Admin/TransactionWrapper'
-import Withdrawals from './components/Admin/Withdrawals'
-import AllUsersList from './components/Admin/AllUsersList'
-import Message from './components/Admin/Message'
+import TransactionWrapper from './components/AdminDashboard/TransactionWrapper'
+import Withdrawals from './components/AdminDashboard/Withdrawals'
+import AllUsersList from './components/AdminDashboard/AllUsersList'
+import Message from './components/AdminDashboard/Message'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

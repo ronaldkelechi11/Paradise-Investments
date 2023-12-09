@@ -1,6 +1,6 @@
-import Blocks from "../components/Admin/Blocks"
-import Navbar from "../components/Admin/Navbar"
-import UserWrapper from "../components/Admin/UserWrapper"
+import Blocks from "../components/AdminDashboard/Blocks"
+import Navbar from "../components/AdminDashboard/Navbar"
+import UserWrapper from "../components/AdminDashboard/UserWrapper"
 
 const Admin = () => {
 
