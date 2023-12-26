@@ -14,7 +14,7 @@ const WithdrawalsDashboard = () => {
     useEffect(() => {
         axios.get(import.meta.env.VITE_BACKEND_URL + "dashboard/" + username + "/withdrawals")
             .then((result) => {
-                setUserWithdrawals(result.data.withdrawals)
+                setUserWithdrawals(result.data?.withdrawals)
             }).catch((err) => {
                 console.log(err);
             });
