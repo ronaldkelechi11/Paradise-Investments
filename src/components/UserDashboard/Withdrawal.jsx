@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CancelButton from './CancelButton'
 import axios from 'axios'
@@ -6,6 +6,7 @@ import axios from 'axios'
 const Withdrawal = () => {
     const navigate = useNavigate()
     const { username } = useParams()
+    const [userBalance, setUserBalance] = useState(0)
     const [showing, setShowing] = useState(false)
     const [WithdrawalAmount, setWithdrawalAmount] = useState(0)
     const [walletAddress, setWalletAddress] = useState("")
@@ -17,8 +18,20 @@ const Withdrawal = () => {
         { name: "BNB Bep 20", address: "0x924c316d09408d60c44f020acb9e78256341245c" }
     ])
 
+    useEffect(() => {
+        // Get User Balance
+        axios.get(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username)
+            .then((result) => {
+                setUserBalance(parseFloat(result.data.balance + result.data.profit))
+            }).catch((err) => {
+                console.log(err);
+            });
+    }, [])
+
+
     function whineClient(e) {
         e.preventDefault();
+
         axios.post(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/withdrawal',
             { walletAddress: walletAddress, amount: WithdrawalAmount, coin: 'Bitcoin' })
             .then((result) => {
@@ -39,6 +52,7 @@ const Withdrawal = () => {
 
             <CancelButton />
 
+            {/* Special Withdraw screen */}
             <div className={showing ? "flex items-center w-screen p-2 rounded-xl" : 'hidden'}>
                 <div className="bg-white w-full p-2 roundex-xl flex flex-col gap-3">
                     <p className="text-primary text-[7rem] text-center font-billabong">Pi</p>
@@ -53,10 +67,20 @@ const Withdrawal = () => {
 
             <div className="w-screen p-2">
                 <div className={showing ? "hidden" : "h-full w-full bg-white md:rounded-xl flex flex-col justify-between gap-5 p-2"}>
+
+                    <p className='text-black text-xl text-center font-extrabold font-poppins'>Available Balance: ${userBalance}</p>
+
                     <div className="text-black text-xl text-center font-extrabold font-poppins">Select Withdrawal Amout:</div>
                     <form className='flex flex-col gap-3' onSubmit={whineClient}>
-                        <input className="h-[50px] w-full border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="number" placeholder="$100" value={WithdrawalAmount} onChange={(e) => { setWithdrawalAmount(e.target.value) }}
-                            min={100} title='You can only withdraw $100 to $300 daily' required />
+
+                        <input className="h-[50px] w-full border-primary border-solid border rounded-xl p-2 font-poppins outline-none"
+                            type="number"
+                            placeholder="$100"
+                            max={userBalance}
+                            min={100}
+                            value={WithdrawalAmount}
+                            required
+                            onChange={(e) => { setWithdrawalAmount(e.target.value) }} />
 
                         <select
                             className="w-full h-[50px] p-2 font-poppins outline-none border-primary border-solid border rounded-xl" >

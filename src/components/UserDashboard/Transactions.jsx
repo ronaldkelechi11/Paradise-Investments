@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { FaThumbsUp, FaThumbsDown, FaArrowLeft } from "react-icons/fa6"
+import { FaArrowLeft } from "react-icons/fa6"
 
 const Transactions = () => {
     const navigate = useNavigate()

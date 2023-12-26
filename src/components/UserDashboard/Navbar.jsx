@@ -39,10 +39,10 @@ function NavLinks() {
     return (
         <div className='text-2xl font- text-white flex flex-col justify-center md:flex-row gap-4 items-center'>
             <Link reloadDocument className={navbarStyling}>Home</Link>
-            <Link to={'transactions'} className={navbarStyling} >Deposits</Link>
-            <Link to={'withdrawals'} className={navbarStyling} >Withdrawals</Link>
             <Link className={navbarStyling} to="withdrawal">Withdraw</Link>
             <Link className={navbarStyling} to="deposit">Deposit</Link>
+            <Link to={'transactions'} className={navbarStyling} >All Deposits</Link>
+            <Link to={'withdrawals'} className={navbarStyling} >All Withdrawals</Link>
             <a className={navbarStyling} href="/login" onClick={() => { alert("Your are about to be logged out of your account") }}>Log Out</a>
         </div >
     )
