@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 
 
 const Home = () => {
+    document.title = 'User Dashboard - Paradise Investment'
+
     var { username } = useParams()
     const navigate = useNavigate()
     const [unreadMessages, setUnreadMessages] = useState(0)
@@ -32,7 +34,7 @@ const Home = () => {
             setUnreadMessages(parseInt(user.messages.length - localStorage.getItem('messageListLength')))
         }).catch((err) => {
             console.log(err);
-            navigate('/signup')
+            // navigate('/signup')
         });
 
     return (

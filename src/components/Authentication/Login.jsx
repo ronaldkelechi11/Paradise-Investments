@@ -5,6 +5,8 @@ import { useState } from "react"
 import axios from "axios"
 
 const Login = () => {
+    document.title = "Login - Paradise Investment"
+
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")

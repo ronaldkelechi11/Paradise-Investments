@@ -5,6 +5,9 @@ import { useState } from "react"
 import axios from "axios"
 
 const Signup = () => {
+    document.title = "Sign Up - Paradise Investment"
+
+
     const naviagte = useNavigate()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
@@ -26,6 +29,7 @@ const Signup = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "signup", { user })
             .then((result) => {
+
                 naviagte("/dashboard/" + result.data)
             }).catch((err) => {
                 if (err.response.status == 409) {
