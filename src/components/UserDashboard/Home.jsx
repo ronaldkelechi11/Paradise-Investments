@@ -34,7 +34,7 @@ const Home = () => {
             setUnreadMessages(parseInt(user.messages.length - localStorage.getItem('messageListLength')))
         }).catch((err) => {
             console.log(err);
-            // navigate('/signup')
+            navigate('/signup')
         });
 
     return (
