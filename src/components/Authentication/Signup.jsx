@@ -3,6 +3,7 @@ import BackButton from "./BackButton"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
+import { WiRefresh } from "react-icons/wi";
 
 const Signup = () => {
     document.title = "Sign Up - Paradise Investment"
@@ -14,12 +15,16 @@ const Signup = () => {
     const [telephone, setTelephone] = useState("")
     const [password, setPassword] = useState("")
 
+    const [loading, setLoading] = useState(false)
+
     function goToLogin() {
         naviagte("/login")
     }
 
     function signup(e) {
         e.preventDefault();
+        setLoading(true)
+
         var user = {
             username: username,
             email: email,
@@ -29,9 +34,9 @@ const Signup = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "signup", { user })
             .then((result) => {
-
                 naviagte("/dashboard/" + result.data)
             }).catch((err) => {
+                setLoading(false)
                 if (err.response.status == 409) {
                     alert("That Email or Username already exist")
                 }
@@ -65,13 +70,18 @@ const Signup = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             type="submit"
-                            className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2 font-poppins">
-                            Sign Up
+                            className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2  flex justify-center items-center">
+                            {loading ?
+                                <WiRefresh size={40} className="animate-spin" /> :
+                                <p className="font-poppins">Sign Up</p>
+                            }
                         </motion.button>
                     </form>
 
-                    <div className="font-poppins text-center">Already have an account? <br /> <span
-                        onClick={goToLogin} className="text-primary underline cursor-pointer">Log In Here</span></div>
+                    <div className="font-poppins text-center">Already have an account? <br />
+                        <span
+                            onClick={goToLogin}
+                            className="text-primary underline cursor-pointer">Log In Here</span></div>
                 </div>
 
                 {/* Second Section */}

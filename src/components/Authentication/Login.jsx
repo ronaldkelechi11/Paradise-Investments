@@ -11,13 +11,16 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const [loading, setLoading] = useState(false)
+
+
     function goToSignup() {
         navigate("/signup")
     }
 
     function login(e) {
         e.preventDefault();
-
+        setLoading(true)
         var user = {
             email: email,
             password: password
@@ -25,6 +28,8 @@ const Login = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "login", { user: user })
             .then((result) => {
+                setLoading(false)
+
                 if (result.status == 203) {
                     navigate("/admin")
                 }
@@ -32,6 +37,8 @@ const Login = () => {
                     navigate("/dashboard/" + result.data.username)
                 }
             }).catch((err) => {
+                setLoading(false)
+
                 if (err.response?.status == 401) {
                     alert("Password is not correct. Please try again.")
                     return false;
@@ -63,8 +70,11 @@ const Login = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             type="submit"
-                            className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2 font-poppins">
-                            Login
+                            className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2  flex justify-center items-center">
+                            {loading ?
+                                <WiRefresh size={40} className="animate-spin" /> :
+                                <p className="font-poppins">Sign Up</p>
+                            }
                         </motion.button>
                     </form>
 
