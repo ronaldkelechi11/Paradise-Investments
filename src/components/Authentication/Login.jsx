@@ -3,6 +3,8 @@ import BackButton from "./BackButton"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
+import { WiRefresh } from "react-icons/wi";
+
 
 const Login = () => {
     document.title = "Login - Paradise Investment"
@@ -73,7 +75,7 @@ const Login = () => {
                             className="h-[50px] w-full uppercase text-white bg-primary rounded-xl p-2  flex justify-center items-center">
                             {loading ?
                                 <WiRefresh size={40} className="animate-spin" /> :
-                                <p className="font-poppins">Sign Up</p>
+                                <p className="font-poppins">Log In</p>
                             }
                         </motion.button>
                     </form>
